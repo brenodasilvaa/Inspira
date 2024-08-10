@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspira_Auth", "Inspira_Auth\Inspira_Auth.csproj", "{638BAE93-2543-44AE-A9E6-FAF8372B6AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira_Auth", "Inspira_Auth\Inspira_Auth.csproj", "{638BAE93-2543-44AE-A9E6-FAF8372B6AEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspira_Music.Domain", "Inspira_Music.Domain\Inspira_Music.Domain.csproj", "{AEE6E419-580E-4504-ADEF-965217DC25BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspira_Music.Infrastructure", "Inspira_Music.Infrastructure\Inspira_Music.Infrastructure.csproj", "{0B87B364-A4B1-46BD-A7A9-D5670743FB1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspira_Music.Application", "Inspira_Music.Application\Inspira_Music.Application.csproj", "{A0961232-4756-4126-B1D5-28E687692A2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira_Music.Api", "Inspira_Music.Api\Inspira_Music.Api.csproj", "{E49075F9-2617-43D8-ADD2-5F5C82BAB186}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{638BAE93-2543-44AE-A9E6-FAF8372B6AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{638BAE93-2543-44AE-A9E6-FAF8372B6AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{638BAE93-2543-44AE-A9E6-FAF8372B6AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE6E419-580E-4504-ADEF-965217DC25BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE6E419-580E-4504-ADEF-965217DC25BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE6E419-580E-4504-ADEF-965217DC25BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE6E419-580E-4504-ADEF-965217DC25BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B87B364-A4B1-46BD-A7A9-D5670743FB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B87B364-A4B1-46BD-A7A9-D5670743FB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B87B364-A4B1-46BD-A7A9-D5670743FB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B87B364-A4B1-46BD-A7A9-D5670743FB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0961232-4756-4126-B1D5-28E687692A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0961232-4756-4126-B1D5-28E687692A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0961232-4756-4126-B1D5-28E687692A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0961232-4756-4126-B1D5-28E687692A2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49075F9-2617-43D8-ADD2-5F5C82BAB186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49075F9-2617-43D8-ADD2-5F5C82BAB186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49075F9-2617-43D8-ADD2-5F5C82BAB186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49075F9-2617-43D8-ADD2-5F5C82BAB186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
