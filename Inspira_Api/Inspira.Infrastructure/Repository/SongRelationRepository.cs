@@ -14,17 +14,16 @@ namespace Inspira_Music.Infrastructure.Repository
             _driver = driver;
         }
 
-        public async Task<Guid> CreateRelation(SongRelation songRelation)
+        public async Task<Guid> Create(SongRelation songRelation)
         {
             var uuid = Guid.NewGuid();
 
             await using (var session = _driver.AsyncSession())
             {
                 var query = new Query($"MATCH (m:Song {{uuid: '{songRelation.OriginalSongId}'}}), (d:Song {{uuid: '{songRelation.InspiredSongId}'}}) " +
-                    $"CREATE (p:SongRelation {{uuid: '{uuid}' , created: datetime()}}) " +
+                    $"CREATE (p:SongRelation {{uuid: '{uuid}', created: datetime()}}) " +
                     $"CREATE (m)-[:BELONGS_TO]->(p) " +
-                    $"CREATE (d)-[:BELONGS_TO]->(p) " +
-                    $"CREATE (m)-[:INSPIRED]->(d) RETURN p");
+                    $"CREATE (d)-[:BELONGS_TO]->(p) RETURN p");
 
                 var result = await session.RunAsync(query);
             }

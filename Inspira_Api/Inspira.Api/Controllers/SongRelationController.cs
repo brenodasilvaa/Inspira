@@ -23,7 +23,7 @@ namespace Inspira_Music.Api.Controllers
                 InspiredSongId = createSongRelation.InspiredSongId
             };
 
-            return Ok(await _relationRepository.CreateRelation(songRelation));
+            return Ok(await _relationRepository.Create(songRelation));
         }
     }
 }

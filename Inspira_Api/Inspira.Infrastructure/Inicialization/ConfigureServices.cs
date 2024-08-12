@@ -24,6 +24,7 @@ namespace Inspira_Music.Infrastructure.Inicialization
 
             services.AddScoped<ISongRelationRepository, SongRelationRepository>();
             services.AddScoped<ISongRepository, SongRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

@@ -365,3 +365,7 @@ FodyWeavers.xsd
 /Inspira_Api/Inspira_Auth/appsettings.json
 /Inspira_Api/Inspira_Music.Api/appsettings.json
 /Inspira_Api/Inspira_Music.Api/appsettings.Development.json
+/Inspira_Api/Inspira.Music.Api/appsettings.Development.json
+/Inspira_Api/Inspira.Music.Api/appsettings.json
+/Inspira_Api/Inspira.Api/appsettings.Development.json
+/Inspira_Api/Inspira.Api/appsettings.json

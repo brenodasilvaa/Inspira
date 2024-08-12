@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Inspira_Music.Infrastructure\Inspira_Music.Infrastructure.csproj" />
+    <ProjectReference Include="..\Inspira.Infrastructure\Inspira.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

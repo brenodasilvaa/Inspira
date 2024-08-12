@@ -9,6 +9,6 @@ namespace Inspira_Music.Domain.Interfaces.Repository
 {
     public interface ISongRelationRepository
     {
-        public Task<Guid> CreateRelation(SongRelation songRelation);
+        public Task<Guid> Create(SongRelation songRelation);
     }
 }
