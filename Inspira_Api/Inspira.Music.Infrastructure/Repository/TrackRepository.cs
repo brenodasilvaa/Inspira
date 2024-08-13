@@ -1,4 +1,6 @@
-﻿using MetaBrainz.MusicBrainz;
+﻿using Inspira.Domain.Interfaces.Repository;
+using Inspira_Music.Domain.Entities;
+using MetaBrainz.MusicBrainz;
 using SpotifyAPI.Web;
 using System;
 using System.Collections.Generic;
@@ -8,23 +10,26 @@ using System.Threading.Tasks;
 
 namespace Inspira.Music.Infrastructure.Repository
 {
-    public class TrackRepository
+    public class TrackRepository : ITrackRepository
     {
-        public async Task<IEnumerable<string>> GetByName()
+        private readonly ISpotifyClient _spotifyClient;
+
+        public TrackRepository(ISpotifyClient spotifyClient)
         {
-            var songTitle = "two of us";
-            var artistName = "the beatles";
-            var config = SpotifyClientConfig
-                .CreateDefault()
-                .WithAuthenticator(new ClientCredentialsAuthenticator("f4f200ba3f074d98940338685ad2133f", "22884c66e4d1450abd63346c13f492c4"));
+            _spotifyClient = spotifyClient;
+        }
 
-            var spotify = new SpotifyClient(config);
+        public async Task<IEnumerable<Song>> Get(string trackName, string artistName, int? skip)
+        {
+            var searchRequest = new SearchRequest(SearchRequest.Types.Track, $"track:{trackName} artist:{artistName}");
 
-            var searchRequest = new SearchRequest(SearchRequest.Types.Track, "track:yesterday artist:The beatles");
+            searchRequest.Market = "BR";
+            searchRequest.Offset = skip;
 
-            var track = await spotify.Search.Item(searchRequest);
+            var tracks = await _spotifyClient.Search.Item(searchRequest);
+            tracks.Tracks.Items
 
-            return Enumerable.Empty<string>();
+            return Enumerable.Empty<Song>();
         }
     }
 }

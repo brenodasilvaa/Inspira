@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Inspira.Music.Infrastructure.Inicialization
 {
-    internal class MusicBrainzConfig
+    internal class MusicInfoConfig
     {
+        public string ClientId { get; set; }
+        public string ClientSecret { get; set; }
     }
 }

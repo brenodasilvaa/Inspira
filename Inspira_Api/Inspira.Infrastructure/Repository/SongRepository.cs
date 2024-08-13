@@ -25,7 +25,7 @@ namespace Inspira_Music.Infrastructure.Repository
             await using (var session = _driver.AsyncSession())
             {
                 var query = new Query($"CREATE (n:Song {{uuid: '{uuid}', name: " +
-                    $"'{song.Name}', performer: '{song.Performer}', released: '{song.Released}', " +
+                    $"'{song.Title}', performer: '{song.Artist}', released: '{song.Released}', " +
                     $"album: '{song.Album}'}}) RETURN n");
 
                 var result = await session.RunAsync(query);
@@ -77,9 +77,9 @@ namespace Inspira_Music.Infrastructure.Repository
             return new Song()
             {
                 Id = Guid.Parse(node.Properties["uuid"].As<string>()),
-                Name = node.Properties["name"].As<string>(),
+                Title = node.Properties["name"].As<string>(),
                 Album = node.Properties["album"].As<string>(),
-                Performer = node.Properties["performer"].As<string>(),
+                Artist = node.Properties["performer"].As<string>(),
                 Released = DateTime.Parse(node.Properties["released"].As<string>())
             };
         }

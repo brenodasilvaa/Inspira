@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Inspira.Domain.Interfaces.Repository;
+using Inspira.Music.Infrastructure.Repository;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SpotifyAPI.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +15,18 @@ namespace Inspira.Music.Infrastructure.Inicialization
     {
         public static void Configure(this IServiceCollection services, IConfiguration cfg)
         {
-            var musicBrainzConfig = cfg.GetSection("MusicBrainz").Get<MusicBrainzConfig>()!;
+            var musicInfoConfig = cfg.GetSection("Spotify").Get<MusicInfoConfig>()!;
+
+            services.AddSingleton<ISpotifyClient>(x =>
+            {
+                var config = SpotifyClientConfig
+                .CreateDefault()
+                .WithAuthenticator(new ClientCredentialsAuthenticator(musicInfoConfig.ClientId, musicInfoConfig.ClientSecret));
+
+                return new SpotifyClient(config);
+            });
+
+            services.AddScoped<ITrackRepository, TrackRepository>();
         }
     }
 }
