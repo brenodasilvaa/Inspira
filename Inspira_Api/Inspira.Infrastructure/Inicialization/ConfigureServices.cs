@@ -22,8 +22,7 @@ namespace Inspira_Music.Infrastructure.Inicialization
                 return GraphDatabase.Driver(uri, AuthTokens.Basic(username, password));
             });
 
-            services.AddScoped<ISongRelationRepository, SongRelationRepository>();
-            services.AddScoped<ISongRepository, SongRepository>();
+            services.AddScoped<ITrackRepository, TrackRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
         }
     }

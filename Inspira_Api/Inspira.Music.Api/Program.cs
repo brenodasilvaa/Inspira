@@ -1,4 +1,5 @@
 using Inspira.Music.Infrastructure.Inicialization;
+using Inspira.Music.Infrastructure.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure(builder.Configuration);
+TrackMapping.Add();
 
 var app = builder.Build();
 

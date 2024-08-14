@@ -1,5 +1,6 @@
 ﻿using Inspira.Domain.Interfaces.Repository;
 using Inspira.Music.Infrastructure.Repository;
+using Mapster;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SpotifyAPI.Web;
@@ -16,6 +17,8 @@ namespace Inspira.Music.Infrastructure.Inicialization
         public static void Configure(this IServiceCollection services, IConfiguration cfg)
         {
             var musicInfoConfig = cfg.GetSection("Spotify").Get<MusicInfoConfig>()!;
+
+            services.AddMapster();
 
             services.AddSingleton<ISpotifyClient>(x =>
             {

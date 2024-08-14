@@ -1,5 +1,6 @@
 using Inspira.Domain.Interfaces.Repository;
 using Inspira.Music.Infrastructure.Repository;
+using Inspira_Music.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Inspira.Music.Api.Controllers
@@ -18,11 +19,9 @@ namespace Inspira.Music.Api.Controllers
         }
 
         [HttpGet()]
-        public async Task<IEnumerable<string>> Get(string trackName, string artistName, int? skip)
+        public async Task<IActionResult> Get(string trackName, string artistName, int? skip)
         {
-            var teste = await _trackRepository.Get(trackName, artistName, skip);
-
-            return [];
+            return Ok(await _trackRepository.Get(trackName, artistName, skip));
         }
     }
 }

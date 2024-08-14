@@ -9,6 +9,6 @@ namespace Inspira_Music.Domain.Interfaces.Repository
 {
     public interface IQuery<T>
     {
-        public Task<T> GetById(Guid id);
+        public Task<T> GetById(string id);
     }
 }

@@ -9,6 +9,6 @@ namespace Inspira.Domain.Interfaces.Repository
 {
     public interface ITrackRepository
     {
-        Task<IEnumerable<Song>> Get(string trackName, string artistName, int? skip);
+        Task<IEnumerable<Track>> Get(string trackName, string artistName, int? skip);
     }
 }
