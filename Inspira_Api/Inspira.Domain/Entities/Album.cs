@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Inspira.Domain.Entities
 {
-    public class Album
+    public class Album : Entity
     {
-        public string Id { get; set; }
         public string Name { get; set; }
         public string CoverUrl { get; set; }
         public DateTime ReleaseDate { get; set; }
+        public Guid ArtistId { get; set; }
+        public Artist Artist{ get; set; }
+        public List<Track> Tracks { get; set; }
     }
 }

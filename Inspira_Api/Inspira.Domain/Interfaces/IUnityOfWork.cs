@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inspira.Domain.Interfaces.Repository
+namespace Inspira.Domain.Interfaces
 {
-    public interface ICommand<T>
+    public interface IUnityOfWork
     {
-        Task Create(T entity);
+        Task SaveAsync();
     }
 }

@@ -1,35 +1,26 @@
-﻿using Inspira_Music.Domain.Entities;
-using Inspira_Music.Domain.Interfaces.Repository;
-using Neo4j.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Inspira.Domain.Entities;
+using Inspira.Domain.Interfaces.Repository;
+using Inspira_Music.Domain.Entities;
 
 namespace Inspira_Music.Infrastructure.Repository
 {
-    public  class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
-        private IDriver _driver;
+        private readonly InspiraDbContext _context;
 
-        public UserRepository(IDriver driver)
+        public UserRepository(InspiraDbContext ctx)
         {
-            _driver = driver;
+            _context = ctx;
         }
 
-        public async Task<Guid> Create(User user)
+        public async Task Create(User user)
         {
-            var uuid = Guid.NewGuid();
+            await _context.Users.AddAsync(user);
+        }
 
-            await using (var session = _driver.AsyncSession())
-            {
-                var query = new Query($"CREATE(n:User {{uuid: '{uuid}'}}, name: {user.Name} RETURN n");
-
-                var result = await session.RunAsync(query);
-            }
-
-            return uuid;
+        public async Task<User?> GetById(Guid id)
+        {
+            return await _context.Users.FindAsync(id);
         }
     }
 }

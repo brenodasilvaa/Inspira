@@ -1,5 +1,5 @@
+using Inspira.Music.Api.Mappings;
 using Inspira.Music.Infrastructure.Inicialization;
-using Inspira.Music.Infrastructure.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 

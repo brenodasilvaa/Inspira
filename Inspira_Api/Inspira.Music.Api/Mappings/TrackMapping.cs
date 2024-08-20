@@ -1,14 +1,8 @@
 ﻿using Inspira.Domain.Entities;
-using Inspira_Music.Domain.Entities;
 using Mapster;
 using SpotifyAPI.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Inspira.Music.Infrastructure.Mappings
+namespace Inspira.Music.Api.Mappings
 {
     public static class TrackMapping
     {

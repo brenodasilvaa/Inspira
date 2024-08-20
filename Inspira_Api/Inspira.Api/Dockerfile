@@ -9,17 +9,19 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Inspira_Music/Inspira_Music.csproj", "Inspira_Music/"]
-RUN dotnet restore "./Inspira_Music/Inspira_Music.csproj"
+COPY ["Inspira.Api/Inspira.Api.csproj", "Inspira.Api/"]
+COPY ["Inspira.Infrastructure/Inspira.Infrastructure.csproj", "Inspira.Infrastructure/"]
+COPY ["Inspira.Domain/Inspira.Domain.csproj", "Inspira.Domain/"]
+RUN dotnet restore "./Inspira.Api/Inspira.Api.csproj"
 COPY . .
-WORKDIR "/src/Inspira_Music"
-RUN dotnet build "./Inspira_Music.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Inspira.Api"
+RUN dotnet build "./Inspira.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Inspira_Music.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Inspira.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Inspira_Music.dll"]
+ENTRYPOINT ["dotnet", "Inspira.Api.dll"]

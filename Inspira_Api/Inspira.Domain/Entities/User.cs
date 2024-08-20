@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Inspira.Domain.Entities;
 
 namespace Inspira_Music.Domain.Entities
 {
-    public class User
+    public class User : Entity
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
+        public List<Post> Posts { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }

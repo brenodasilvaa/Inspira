@@ -19,7 +19,7 @@ namespace Inspira.Music.Api.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Get(string trackName, string artistName, int? skip)
+        public async Task<IActionResult> Get(string trackName, string artistName, int skip)
         {
             return Ok(await _trackRepository.Get(trackName, artistName, skip));
         }

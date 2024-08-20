@@ -1,13 +1,7 @@
-﻿using Inspira.Domain.Interfaces.Repository;
-using Inspira_Music.Domain.Entities;
+﻿using Inspira.Domain.Entities;
+using Inspira.Domain.Interfaces.Repository;
 using Mapster;
-using MetaBrainz.MusicBrainz;
 using SpotifyAPI.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inspira.Music.Infrastructure.Repository
 {
@@ -31,6 +25,22 @@ namespace Inspira.Music.Infrastructure.Repository
             var tracksMapped = tracks.Tracks.Items.Adapt<List<Track>>();
 
             return tracksMapped;
+        }
+
+        public Task<IEnumerable<Track>> Get(string trackName, string artistName, int skip)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public Task<Track?> GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task ICommand<Track>.Create(Track entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

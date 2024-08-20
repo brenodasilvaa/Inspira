@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inspira_Music.Infrastructure.Inicialization
 {
-    internal class Neo4JConfig
+    internal class NpgsqlConfig
     {
         public string Endpoint { get; set; }
         public string Login { get; set; }

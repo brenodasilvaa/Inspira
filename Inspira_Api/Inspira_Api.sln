@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira.Application", "Insp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira.Api", "Inspira.Api\Inspira.Api.csproj", "{E49075F9-2617-43D8-ADD2-5F5C82BAB186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspira.Music.Api", "Inspira.Music.Api\Inspira.Music.Api.csproj", "{2C154341-4447-4941-AA77-21DA36911E17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira.Music.Api", "Inspira.Music.Api\Inspira.Music.Api.csproj", "{2C154341-4447-4941-AA77-21DA36911E17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inspira.Music.Infrastructure", "Inspira.Music.Infrastructure\Inspira.Music.Infrastructure.csproj", "{A2325EA2-A1F2-4486-9725-F9C77CBD690D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira.Music.Infrastructure", "Inspira.Music.Infrastructure\Inspira.Music.Infrastructure.csproj", "{A2325EA2-A1F2-4486-9725-F9C77CBD690D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{53DBC651-6085-42BE-B4C6-570B88EE331D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A2325EA2-A1F2-4486-9725-F9C77CBD690D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2325EA2-A1F2-4486-9725-F9C77CBD690D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2325EA2-A1F2-4486-9725-F9C77CBD690D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

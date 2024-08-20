@@ -1,9 +1,13 @@
-﻿using Inspira_Music.Domain.Interfaces.Repository;
+﻿using Inspira.Domain.Entities;
+using Inspira.Domain.Interfaces;
+using Inspira.Domain.Interfaces.Repository;
+using Inspira.Infrastructure;
+using Inspira.Infrastructure.Repository;
 using Inspira_Music.Infrastructure.Repository;
+using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Neo4j.Driver;
-using System.Text.Json;
 
 namespace Inspira_Music.Infrastructure.Inicialization
 {
@@ -11,19 +15,17 @@ namespace Inspira_Music.Infrastructure.Inicialization
     {
         public static void Configure(this IServiceCollection services, IConfiguration cfg)
         {
-            var neo4JConfig = cfg.GetSection("Neo4J").Get<Neo4JConfig>()!;
+            var connectionString = cfg.GetConnectionString("DefaultConnection");
 
-            services.AddSingleton(sp =>
-            {
-                var uri = neo4JConfig.Endpoint;
-                var username = neo4JConfig.Login;
-                var password = neo4JConfig.Password;
+            services.AddDbContext<InspiraDbContext>(options => options.UseNpgsql(connectionString));
 
-                return GraphDatabase.Driver(uri, AuthTokens.Basic(username, password));
-            });
+            services.AddScoped<IUnityOfWork, UnityOfWork>();
+
+            services.AddMapster();
 
             services.AddScoped<ITrackRepository, TrackRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPostRepository, PostRepository>();
         }
     }
 }
