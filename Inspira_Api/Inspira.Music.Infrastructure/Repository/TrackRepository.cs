@@ -1,5 +1,6 @@
 ﻿using Inspira.Domain.Entities;
 using Inspira.Domain.Interfaces.Repository;
+using Inspira_Music.Domain.Models;
 using Mapster;
 using SpotifyAPI.Web;
 
@@ -14,7 +15,7 @@ namespace Inspira.Music.Infrastructure.Repository
             _spotifyClient = spotifyClient;
         }
 
-        public async Task<IEnumerable<Track>> Get(string trackName, string artistName, int? skip)
+        public async Task<IEnumerable<Track>> Get(string trackName, string artistName, int skip)
         {
             var searchRequest = new SearchRequest(SearchRequest.Types.Track, $"track:{trackName} artist:{artistName}");
 
@@ -27,11 +28,10 @@ namespace Inspira.Music.Infrastructure.Repository
             return tracksMapped;
         }
 
-        public Task<IEnumerable<Track>> Get(string trackName, string artistName, int skip)
+        public IEnumerable<Track> Get(FilterBase filter)
         {
             throw new NotImplementedException();
         }
-
 
         public Task<Track?> GetById(Guid id)
         {

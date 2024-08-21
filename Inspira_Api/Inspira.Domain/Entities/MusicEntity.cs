@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Inspira.Domain.Entities
 {
-    public class Artist : MusicEntity
+    public class MusicEntity
     {
-        public string Name { get; set; }
+        public string Id { get; set; }
     }
 }

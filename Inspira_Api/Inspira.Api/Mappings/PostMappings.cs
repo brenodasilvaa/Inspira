@@ -9,8 +9,8 @@ namespace Inspira.Api.Mappings
         public static void Add()
         {
             TypeAdapterConfig<CreatePostDto, Post>.NewConfig()
-                .Map(dest => dest.TrackSource, src => new Track() { Id = src.TrackSourceId })
-                .Map(dest => dest.TrackDest, src => new Track() { Id = src.TrackDestId })
+                .Map(dest => dest.TrackSourceId, src => src.TrackSourceId )
+                .Map(dest => dest.TrackDestId, src => src.TrackDestId )
                 .Map(dest => dest.UserId, src => src.OwnerId);
         }
     }

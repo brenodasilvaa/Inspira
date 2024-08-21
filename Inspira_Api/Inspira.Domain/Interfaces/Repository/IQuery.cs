@@ -10,5 +10,6 @@ namespace Inspira.Domain.Interfaces.Repository
     public interface IQuery<T>
     {
         public Task<T?> GetById(Guid id);
+        public IEnumerable<T> Get(FilterBase filter);
     }
 }

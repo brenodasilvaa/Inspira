@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>53dbc651-6085-42be-b4c6-570b88ee331d</ProjectGuid>
+    <ProjectGuid>8ec26dfc-22e2-4ddf-9eeb-92a23525adf6</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>inspira_api</DockerServiceName>

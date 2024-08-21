@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira.Music.Api", "Inspir
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inspira.Music.Infrastructure", "Inspira.Music.Infrastructure\Inspira.Music.Infrastructure.csproj", "{A2325EA2-A1F2-4486-9725-F9C77CBD690D}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{53DBC651-6085-42BE-B4C6-570B88EE331D}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8EC26DFC-22E2-4DDF-9EEB-92A23525ADF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{A2325EA2-A1F2-4486-9725-F9C77CBD690D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2325EA2-A1F2-4486-9725-F9C77CBD690D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2325EA2-A1F2-4486-9725-F9C77CBD690D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53DBC651-6085-42BE-B4C6-570B88EE331D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC26DFC-22E2-4DDF-9EEB-92A23525ADF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC26DFC-22E2-4DDF-9EEB-92A23525ADF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC26DFC-22E2-4DDF-9EEB-92A23525ADF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC26DFC-22E2-4DDF-9EEB-92A23525ADF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

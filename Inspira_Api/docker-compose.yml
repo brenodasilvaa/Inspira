@@ -18,6 +18,17 @@ services:
       - ASPNETCORE_URLS=http://+:80
     networks:
       - dev
+  inspira_music_api:
+    container_name: inspira-music-service
+    ports:
+      - "5010:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    build:
+      context: ./Inspira.Music.Api
+      dockerfile: Dockerfile
+    networks:
+      - dev
   inspira_db:
     image: postgres:latest
     container_name: inspira_db

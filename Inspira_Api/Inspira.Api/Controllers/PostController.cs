@@ -2,6 +2,7 @@
 using Inspira.Domain.Interfaces;
 using Inspira.Domain.Interfaces.Repository;
 using Inspira_Music.Api.Dtos;
+using Inspira_Music.Domain.Models;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,6 +37,12 @@ namespace Inspira.Api.Controllers
             {
                 return BadRequest(new ProblemDetails() { Detail = ex.Message });
             }
+        }
+
+        [HttpGet("by-user-id/{id}")]
+        public async Task<IActionResult> GetByUserId(Guid id, [FromQuery] FilterBase filter)
+        {
+            return Ok(_postRepository.GetByUserId(id, filter));
         }
     }
 }

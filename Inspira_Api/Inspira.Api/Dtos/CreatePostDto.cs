@@ -5,7 +5,8 @@ namespace Inspira_Music.Api.Dtos
     public class CreatePostDto
     {
         public Guid OwnerId { get; set; }
-        public Guid TrackSourceId { get; set; }
-        public Guid TrackDestId { get; set; }
+        public string TrackSourceId { get; set; }
+        public string TrackDestId { get; set; }
+        public string Descricao { get; set; } = string.Empty;
     }
 }

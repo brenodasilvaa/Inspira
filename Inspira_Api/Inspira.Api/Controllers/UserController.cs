@@ -3,6 +3,7 @@ using Inspira.Domain.Interfaces;
 using Inspira.Domain.Interfaces.Repository;
 using Inspira.Infrastructure;
 using Inspira_Music.Domain.Entities;
+using Inspira_Music.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Inspira.Api.Controllers
@@ -28,6 +29,14 @@ namespace Inspira.Api.Controllers
             await _userRepository.Create(user);
 
             await _unityOfWork.SaveAsync();
+
+            return Ok(user);
+        }
+
+        [HttpGet]
+        public IActionResult Get([FromQuery] FilterBase filter)
+        {
+            var user = _userRepository.Get(filter);
 
             return Ok(user);
         }

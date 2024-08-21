@@ -10,6 +10,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Inspira.Music.Api/Inspira.Music.Api.csproj", "Inspira.Music.Api/"]
+COPY ["Inspira.Music.Infrastructure/Inspira.Music.Infrastructure.csproj", "Inspira.Music.Infrastructure/"]
+COPY ["Inspira.Domain/Inspira.Domain.csproj", "Inspira.Domain/"]
 RUN dotnet restore "./Inspira.Music.Api/Inspira.Music.Api.csproj"
 COPY . .
 WORKDIR "/src/Inspira.Music.Api"

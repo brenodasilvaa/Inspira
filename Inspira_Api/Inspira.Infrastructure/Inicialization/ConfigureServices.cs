@@ -23,7 +23,6 @@ namespace Inspira_Music.Infrastructure.Inicialization
 
             services.AddMapster();
 
-            services.AddScoped<ITrackRepository, TrackRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
         }

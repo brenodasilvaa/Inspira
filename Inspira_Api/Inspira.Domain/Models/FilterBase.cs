@@ -9,6 +9,6 @@ namespace Inspira_Music.Domain.Models
     public class FilterBase
     {
         public int Skip { get; set; }
-        public int Take { get; set; }
+        public int Take { get; set; } = 10;
     }
 }

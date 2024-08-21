@@ -15,8 +15,7 @@ namespace Inspira.Infrastructure.DbMappings
         {
             builder.HasKey(x => x.Id);
             builder.HasMany(x => x.Comments).WithOne(x => x.Post).HasForeignKey(x => x.PostId);
-            builder.HasOne(x => x.TrackSource).WithMany(x => x.Posts).HasForeignKey(x => x.TrackSourceId);
-            builder.HasOne(x => x.TrackDest).WithMany().HasForeignKey(x => x.TrackDestId);
+            builder.Property(x => x.Descricao).HasMaxLength(5000);
         }
     }
 }
