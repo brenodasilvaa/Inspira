@@ -1,5 +1,7 @@
-﻿using Inspira.Domain.Entities;
+﻿using Inspira.Api.Dtos;
+using Inspira.Domain.Entities;
 using Inspira_Music.Api.Dtos;
+using Inspira_Music.Domain.Entities;
 using Mapster;
 
 namespace Inspira.Api.Mappings

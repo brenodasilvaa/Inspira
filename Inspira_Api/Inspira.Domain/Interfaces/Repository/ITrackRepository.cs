@@ -2,8 +2,9 @@
 
 namespace Inspira.Domain.Interfaces.Repository
 {
-    public interface ITrackRepository : IQuery<Track>, ICommand<Track>
+    public interface ITrackRepository
     {
         Task<IEnumerable<Track>> Get(string trackName, string artistName, int skip);
+        Task<Track> GetById(string id, CancellationToken cancellation);
     }
 }

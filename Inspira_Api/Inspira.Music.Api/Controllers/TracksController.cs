@@ -23,5 +23,11 @@ namespace Inspira.Music.Api.Controllers
         {
             return Ok(await _trackRepository.Get(trackName, artistName, skip));
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            return Ok(await _trackRepository.GetById(id, CancellationToken.None));
+        }
     }
 }

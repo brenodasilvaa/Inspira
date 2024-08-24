@@ -25,6 +25,7 @@ namespace Inspira_Music.Infrastructure.Inicialization
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
         }
     }
 }
