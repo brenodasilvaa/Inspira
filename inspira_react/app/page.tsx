@@ -6,9 +6,7 @@ import './globals.css'; // Tailwind imports
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
       <HomePage />
-    </ThemeProvider>
   );
 };
 

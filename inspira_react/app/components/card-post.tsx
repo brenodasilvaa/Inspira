@@ -1,7 +1,8 @@
 'use client'; // Mark this as a Client Component
 
 import React from 'react';
-import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography } from '@mui/material';
+import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography, Icon } from '@mui/material';
+import CommentIcon from '@mui/icons-material/Comment';
 
 interface ImageCardProps {
     title: string;
@@ -19,10 +20,14 @@ const CardPost: React.FC<ImageCardProps> = ({ title, description, imageUrl }) =>
     <Card>
       <CardHeader
         avatar={
-          <Avatar alt="User Photo" src={"https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"} />
+          <Avatar alt="User Photo" src={imageUrl} />
         }
         title="Breno"
         subheader="September 14, 2016"
+        action={
+          <div>3 <CommentIcon></CommentIcon></div>
+          
+        }
       />
       <CardActionArea onClick={handleClick}>
       <Grid container spacing={0.5}>
@@ -43,7 +48,7 @@ const CardPost: React.FC<ImageCardProps> = ({ title, description, imageUrl }) =>
         <Grid item xs={6}>
           <CardMedia
             component="img"
-            image="https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
+            image= {imageUrl}
             alt="Second Image"
             style={{ height: '100px', objectFit: 'cover' }}
           />
