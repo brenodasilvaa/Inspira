@@ -10,6 +10,18 @@ const theme = createTheme({
     },
   },
   typography: {
+    body2: {
+      fontSize: '0.8rem',    // Set your base font size
+    },
+    body1: {
+      fontSize: '0.8rem',    // Set your base font size
+    },
+    subtitle1: {
+      fontSize: '0.8rem',    // Set your base font size
+    },
+    subtitle2: {
+      fontSize: '0.8rem',    // Set your base font size
+    },
     fontFamily: 'Open Sans, Arial, sans-serif'
   }
 });

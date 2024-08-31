@@ -1,7 +1,7 @@
 'use client'; // Mark this as a Client Component
 
 import React from 'react';
-import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography, Icon } from '@mui/material';
+import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography, Icon, useTheme, useMediaQuery } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
 import { useRouter } from 'next/navigation';
 
@@ -14,13 +14,15 @@ interface ImageCardProps {
 const CardPost: React.FC<ImageCardProps> = ({ title, description, imageUrl }) => {
 
   const navigate = useRouter();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleClick = () => {
     navigate.push('/post-detail');
   };
 
   return (
-    <Card>
+    <Card sx={{minHeight:'50vh', maxHeight:'50vh', padding:'10px', width:isSmallScreen ? '80vw' : '40vw'}}>
       <CardHeader
         avatar={
           <Avatar alt="User Photo" src={imageUrl} />
@@ -60,14 +62,6 @@ const CardPost: React.FC<ImageCardProps> = ({ title, description, imageUrl }) =>
           <Typography variant="subtitle2" color="text.secondary">{description}</Typography>
           </CardContent>
         </Grid>
-        <Box
-        sx={{
-          bottom: 0,
-          left: 0,
-          width: 'inherit'
-        }}
-      >        
-      </Box>
       </Grid>
       </CardActionArea>
     </Card>

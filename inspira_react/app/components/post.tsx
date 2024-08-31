@@ -1,7 +1,9 @@
 'use client'; // Mark this as a Client Component
 
 import React from 'react';
-import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography, Icon } from '@mui/material';
+import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography, Icon, TextField } from '@mui/material';
+import { Label } from '@mui/icons-material';
+import ReactPlayer from 'react-player';
 
 interface ImageCardProps {
     title: string;
@@ -16,7 +18,7 @@ const Post: React.FC<ImageCardProps> = ({ title, description, imageUrl }) => {
   };
 
   return (
-    <Card sx={{alignContent:'center', width:'60%'}}>
+    <Card sx={{alignContent:'center'}}>
       <CardHeader
         avatar={
           <Avatar alt="User Photo" src={imageUrl} />
@@ -30,12 +32,9 @@ const Post: React.FC<ImageCardProps> = ({ title, description, imageUrl }) => {
         <CardMedia>
           {
             true ? (
-              <video style={{objectFit:'cover', height:'40vh', width:'100%'}} controls>
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              <ReactPlayer width={'100%'} height={'20vh'}  style={{objectFit:'cover'}} controls url='https://www.youtube.com/watch?v=NrgmdOz227I' />
             ) :
-            <img src={imageUrl} alt={title} style={{ width: '100%', height: '40vh', objectFit:'cover' }} />
+            <img src={imageUrl} alt={title} style={{ width: '100%', height: '20vh', objectFit:'cover' }} />
           }
         
       </CardMedia>
@@ -50,12 +49,12 @@ const Post: React.FC<ImageCardProps> = ({ title, description, imageUrl }) => {
         <CardMedia>
         {
             false ? (
-              <video width="100%" height="40vh" controls>
+              <video width="100%" height="20vh" controls>
               <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             ) :
-            <img src={'https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25'} alt={title} style={{ width: '100%', height:'40vh', objectFit:'cover'}} />
+            <img src={'https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25'} alt={title} style={{ width: '100%', height:'20vh', objectFit:'cover'}} />
           }
       </CardMedia>
           <CardContent>
@@ -66,7 +65,9 @@ const Post: React.FC<ImageCardProps> = ({ title, description, imageUrl }) => {
       </Grid>
       </CardContent>
       <CardContent>
-      <Typography variant="body2">TESTESTESTE</Typography>
+      <Box width={'100%'} sx={{whiteSpace: "pre-wrap"}}>
+        <Typography variant='body1'>{description}</Typography>
+      </Box>
       </CardContent>
     </Card>
   );
