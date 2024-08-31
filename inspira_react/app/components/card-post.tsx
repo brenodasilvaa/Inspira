@@ -3,6 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, Button, Avatar, Box, CardContent, CardActionArea, CardMedia, Grid, Typography, Icon } from '@mui/material';
 import CommentIcon from '@mui/icons-material/Comment';
+import { useRouter } from 'next/navigation';
 
 interface ImageCardProps {
     title: string;
@@ -12,8 +13,10 @@ interface ImageCardProps {
 
 const CardPost: React.FC<ImageCardProps> = ({ title, description, imageUrl }) => {
 
+  const navigate = useRouter();
+
   const handleClick = () => {
-    console.log('Card clicked!');
+    navigate.push('/post-detail');
   };
 
   return (
@@ -63,10 +66,7 @@ const CardPost: React.FC<ImageCardProps> = ({ title, description, imageUrl }) =>
           left: 0,
           width: 'inherit'
         }}
-      >
-        <Button variant="contained" size="small" color="primary" fullWidth>
-          Ver
-        </Button>
+      >        
       </Box>
       </Grid>
       </CardActionArea>

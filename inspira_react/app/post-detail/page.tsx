@@ -4,6 +4,7 @@ import React from 'react';
 import { Grid, Box, ThemeProvider } from '@mui/material';
 import CardPost from '../components/card-post';
 import Post from '../components/post';
+import AlignItemsList from '../components/comment-list';
 
 const cardsData = [
   { id: 1, title: 'First Image', description: 'Info about the first image', imageUrl: 'https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25' },
@@ -20,12 +21,16 @@ const cardsData = [
 
 const PostDetailPage = () => {
   return (
-      <Box sx={{ width:1, marginTop:10 }}>
+      <Box sx={{ display:'flex', flexDirection:'row', justifyContent:'space-around', width:1, marginTop:10 }}>
                   <Post 
                     title={'title'} 
                     description={'card.description'} 
                     imageUrl={'card.imageUrl'} 
                   />
+                  
+                  <AlignItemsList>
+                    
+                  </AlignItemsList>
         </Box>  
   );
 };
