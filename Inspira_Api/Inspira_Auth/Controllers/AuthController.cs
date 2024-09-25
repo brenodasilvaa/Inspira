@@ -29,9 +29,9 @@ namespace Inspira_Auth.Controllers
         }
 
         [HttpPost("confirmSignup")]
-        public async Task<IActionResult> ConfirmSignUp(string userName, string code)
+        public async Task<IActionResult> ConfirmSignUp(string userMail, string code)
         {
-            await _authService.ConfirmSignUp(userName, code);
+            await _authService.ConfirmSignUp(userMail, code);
 
             return Ok();
         }
